@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyCalculator1</string>
+    <string name="displayText">MyCalculator1</string>
+    <string name="Add">+</string>
+    <string name="Subtract">-</string>
+    <string name="Multiply">x</string>
+    <string name="Divide">/</string>
+    <string name="invalidInput">Please provide a valid number input</string>
+</resources>
