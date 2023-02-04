@@ -48,36 +48,45 @@
         android:padding="24dp" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="24dp">
 
         <Button
             android:id="@+id/BtnAdd"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/Add" />
 
         <Button
             android:id="@+id/BtnSubtract"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/Subtract" />
 
         <Button
             android:id="@+id/BtnMultiple"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/Multiply" />
 
         <Button
             android:id="@+id/BtnDivide"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/Divide" />
+
+        <Button
+            android:id="@+id/BtnMod"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/Mod" />
+
     </LinearLayout>
 </LinearLayout>
