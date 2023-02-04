@@ -22,5 +22,16 @@ class CalculatorModel {
                 return "invalid"
             }
         }
+
+        fun sub(input1: String, input2: String): String {
+            try {
+                val number1 = input1.toDouble()
+                val number2 = input2.toDouble()
+                return (number1 - number2).toString()
+            } catch (e: NumberFormatException) {
+                println("Error: One or both of the inputs are not valid numbers.")
+                return "invalid"
+            }
+        }
     }
 }
