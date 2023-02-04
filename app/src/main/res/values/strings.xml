@@ -6,4 +6,5 @@
     <string name="Multiply">x</string>
     <string name="Divide">/</string>
     <string name="invalidInput">Please provide a valid number input here</string>
+    <string name="invalidOperand">Error: Division by 0 is not allowed</string>
 </resources>
