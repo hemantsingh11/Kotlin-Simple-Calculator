@@ -95,5 +95,35 @@ class MainActivity : AppCompatActivity() {
             }
             binding.TvResutWindow.setText(answer.toString())
         }
+
+
+        binding.BtnMod.setOnClickListener { view: View ->
+            input1 = binding.EtPlainTextInput1.text.toString()
+            input2 = binding.EtPlainTextInput2.text.toString()
+            var answer : String = CalculatorModel.mod(input1, input2)
+            if (answer.equals("invalid")){
+
+                val snackBarView  = Snackbar.make(view,
+                    R.string.invalidInput,
+                    Snackbar.LENGTH_SHORT)
+                val view = snackBarView.view
+                val params = view.layoutParams as FrameLayout.LayoutParams
+                params.gravity = Gravity.TOP
+                view.layoutParams = params
+                snackBarView.show()
+            }
+            if (answer.equals("invalid operand")){
+
+                val snackBarView  = Snackbar.make(view,
+                    R.string.invalidOperand,
+                    Snackbar.LENGTH_SHORT)
+                val view = snackBarView.view
+                val params = view.layoutParams as FrameLayout.LayoutParams
+                params.gravity = Gravity.TOP
+                view.layoutParams = params
+                snackBarView.show()
+            }
+            binding.TvResutWindow.setText(answer.toString())
+        }
     }
 }
