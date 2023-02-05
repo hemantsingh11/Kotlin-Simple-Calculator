@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:alpha="1"
+    android:background="@drawable/background_calculator"
+    android:backgroundTint="#95FFFFFF"
+    android:backgroundTintMode="src_over">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top"
@@ -22,8 +27,8 @@
             android:gravity="center"
             android:padding="24dp"
             android:text="Simple Calculator"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
 
         <TextView
@@ -31,8 +36,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:background="#97FF9800"
+            android:capitalize="words"
             android:hint="Result will be displayed here"
-            android:padding="24dp" />
+            android:padding="24dp"
+            android:textAlignment="center"
+            android:textColor="#FD0000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
 
         <EditText
@@ -40,16 +51,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:backgroundTint="#000000"
             android:inputType="text"
-            android:padding="24dp" />
+            android:padding="24dp"
+            android:textColor="#000000"
+            tools:text=" " />
 
         <EditText
             android:id="@+id/EtPlain_text_input2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:backgroundTint="#000000"
             android:inputType="text"
-            android:padding="24dp" />
+            android:padding="24dp"
+            android:textColor="#FF000000" />
 
         <LinearLayout
             android:layout_width="match_parent"

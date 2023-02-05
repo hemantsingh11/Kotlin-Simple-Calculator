@@ -9,4 +9,5 @@
     <string name="invalidOperand">Error: Division by 0 is not allowed</string>
     <string name="Modulus">%</string>
     <string name="Mod">%</string>
+    <string name="applicationName">MyCalculator</string>
 </resources>
