@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import com.example.mycalculator1.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
+
 import kotlin.properties.Delegates
 
 private fun String.equals(other: String, ignoreCase: () -> Unit) {
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var input1 : String
     private lateinit var input2 : String
+    private lateinit var answer : String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding.BtnAdd.setOnClickListener { view: View ->
             input1 = binding.EtPlainTextInput1.text.toString()
             input2 = binding.EtPlainTextInput2.text.toString()
-            var answer : String = CalculatorModel.add(input1, input2)
+            answer  = CalculatorModel.add(input1, input2)
             if (answer.equals("invalid")){
 
                 val snackBarView  = Snackbar.make(view,
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         binding.BtnSubtract.setOnClickListener { view: View ->
             input1 = binding.EtPlainTextInput1.text.toString()
             input2 = binding.EtPlainTextInput2.text.toString()
-            var answer : String = CalculatorModel.sub(input1, input2)
+            answer = CalculatorModel.sub(input1, input2)
             if (answer.equals("invalid")){
 
                 val snackBarView  = Snackbar.make(view,
@@ -70,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         binding.BtnDivide.setOnClickListener { view: View ->
             input1 = binding.EtPlainTextInput1.text.toString()
             input2 = binding.EtPlainTextInput2.text.toString()
-            var answer : String = CalculatorModel.div(input1, input2)
+            answer = CalculatorModel.div(input1, input2)
             if (answer.equals("invalid")){
 
                 val snackBarView  = Snackbar.make(view,
@@ -100,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         binding.BtnMod.setOnClickListener { view: View ->
             input1 = binding.EtPlainTextInput1.text.toString()
             input2 = binding.EtPlainTextInput2.text.toString()
-            var answer : String = CalculatorModel.mod(input1, input2)
+            answer = CalculatorModel.mod(input1, input2)
             if (answer.equals("invalid")){
 
                 val snackBarView  = Snackbar.make(view,
@@ -129,12 +131,12 @@ class MainActivity : AppCompatActivity() {
         binding.BtnMultiple.setOnClickListener { view: View ->
             input1 = binding.EtPlainTextInput1.text.toString()
             input2 = binding.EtPlainTextInput2.text.toString()
-            var answer : String = CalculatorModel.product(input1, input2)
+            answer = CalculatorModel.product(input1, input2)
             if (answer.equals("invalid")){
 
                 val snackBarView  = Snackbar.make(view,
-                        R.string.invalidInput,
-                        Snackbar.LENGTH_SHORT)
+                    R.string.invalidInput,
+                    Snackbar.LENGTH_SHORT)
                 val view = snackBarView.view
                 val params = view.layoutParams as FrameLayout.LayoutParams
                 params.gravity = Gravity.TOP
@@ -146,5 +148,17 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        val finalAnswer: String = answer
+        outState.putString("savedData", finalAnswer)
+    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val finalAnswer: String = savedInstanceState.getString("savedData", "answer")
+        answer = finalAnswer
+        binding.TvResutWindow.text = answer.toString()
     }
 }

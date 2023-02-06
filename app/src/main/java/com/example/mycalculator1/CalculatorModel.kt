@@ -57,7 +57,7 @@ class CalculatorModel {
                 return "invalid operand"
             }
         }
-        
+
         fun product(input1: String, input2: String): String {
             try {
                 val number1 = input1.toDouble()
