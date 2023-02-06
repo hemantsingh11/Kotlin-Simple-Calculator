@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top"
+
         android:orientation="vertical">
 
         <TextView
@@ -68,10 +69,13 @@
             android:textColor="#FF000000" />
 
         <LinearLayout
+            android:id="@+id/Ltoperation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal"
-            android:padding="24dp">
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
 
             <Button
                 android:id="@+id/BtnAdd"
